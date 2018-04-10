@@ -106,8 +106,16 @@ export interface HapinessConsulClientOptions {
     scheme?: string;
     host?: string;
     port?: string;
-    username?: string;
-    password?: string;
+    defaults?: {
+        consistent?: boolean;
+        dc?: string;
+        stale?: boolean;
+        token?: string;
+        wait?: string;
+        wan?: boolean;
+        ctx?: NodeJS.EventEmitter;
+        timeout?: number;
+    };
     ca?: string;
     baseUrl?: string;
 }

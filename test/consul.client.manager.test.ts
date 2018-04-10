@@ -18,25 +18,16 @@ export class ConsulClientManagerTest {
             }
         );
 
-        const managerWithAuth = new ConsulClientManager({ username: 'user1', password: 'passwd' });
-        unit.object(managerWithAuth.config).is(
+        const managerWithAuth = new ConsulClientManager(
             {
-                username: 'user1',
-                password: 'passwd',
-                baseUrl: 'http://user1:passwd@127.0.0.1:8500/v1'
+                defaults: { token: 'user1-token' },
+                baseUrl: 'http://my_base_url:8500/v1'
             }
         );
-
-        const managerWithAuthAndBaseUrl = new ConsulClientManager({
-            baseUrl: 'https://thisisatest.com:4444',
-            username: 'user1',
-            password: 'passwd'
-        });
-        unit.object(managerWithAuthAndBaseUrl.config).is(
+        unit.object(managerWithAuth.config).is(
             {
-                username: 'user1',
-                password: 'passwd',
-                baseUrl: 'https://user1:passwd@thisisatest.com:4444'
+                defaults: { token: 'user1-token' },
+                baseUrl: 'http://my_base_url:8500/v1'
             }
         );
     }

@@ -31,7 +31,8 @@ export class ConsulClientManager {
             if (_config.baseUrl) {
                 _config.baseUrl = appendAuthStringToUrl(authString, _config.baseUrl);
             } else {
-                const baseUrl = `${_config.scheme}://${_config.host}:${_config.port}`;
+                // If there is no baseUrl provided, make it point to the /v1 (as it is done in consul module)
+                const baseUrl = `${_config.scheme}://${_config.host}:${_config.port}/v1`;
                 _config.baseUrl = appendAuthStringToUrl(authString, baseUrl);
             }
 

@@ -1,8 +1,10 @@
+import { CommonOptions } from 'consul';
+
 export interface HapinessConsulClientOptions {
     scheme?: string;
     host?: string;
     port?: number;
-    token?: string;
+    defaults?: CommonOptions;
     ca?: string;
     baseUrl?: string;
 }

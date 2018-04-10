@@ -18,7 +18,7 @@ export class ConsulClientManager {
             scheme: config.scheme || 'http',
             host: config.host || '127.0.0.1',
             port: config.port || 8500,
-            token: config.token,
+            defaults: config.defaults,
             ca: config.ca,
             baseUrl: config.baseUrl
         };

@@ -1,6 +1,6 @@
 import * as consul from 'consul';
 
-import { bindObservable, appendAuthStringToUrl } from '../utils';
+import { bindObservable } from '../utils';
 import { HapinessConsulClientOptions } from '../interfaces';
 
 export class ConsulClientManager {
@@ -18,27 +18,15 @@ export class ConsulClientManager {
             scheme: config.scheme || 'http',
             host: config.host || '127.0.0.1',
             port: config.port || 8500,
-            username: config.username,
-            password: config.password,
+            defaults: config.defaults,
             ca: config.ca,
             baseUrl: config.baseUrl
         };
 
-        const authString = _config.username && _config.password ?
-            `${_config.username}:${_config.password}` : '';
-
-        if (!!authString.length) {
-            if (_config.baseUrl) {
-                _config.baseUrl = appendAuthStringToUrl(authString, _config.baseUrl);
-            } else {
-                // If there is no baseUrl provided, make it point to the /v1 (as it is done in consul module)
-                const baseUrl = `${_config.scheme}://${_config.host}:${_config.port}/v1`;
-                _config.baseUrl = appendAuthStringToUrl(authString, baseUrl);
-            }
-
-            _config.scheme = undefined;
-            _config.host = undefined;
-            _config.port = undefined;
+        if (_config.baseUrl) {
+            delete _config.scheme;
+            delete _config.host;
+            delete _config.port;
         }
 
         return Object.keys(_config).reduce((finalConf, prop) => {

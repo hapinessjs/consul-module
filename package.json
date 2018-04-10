@@ -1,0 +1,96 @@
+{
+    "name": "@hapiness/consul",
+    "version": "1.0.0",
+    "description": "Hapiness module for consul",
+    "main": "commonjs/index.js",
+    "types": "index.d.ts",
+    "private": false,
+    "scripts": {
+        "test": "make test",
+        "pretest": "make pretest",
+        "coveralls": "make coveralls",
+        "packaging": "make packaging",
+        "prebuild": "make clean",
+        "build": "make test && make tsc",
+        "postbuild": "make packaging"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/hapinessjs/consul-module.git"
+    },
+    "keywords": [
+        "HapiJS",
+        "Hapi",
+        "Hapiness",
+        "Framework",
+        "Node",
+        "NodeJS",
+        "Consul",
+        "Decorator",
+        "RxJS",
+        "Consul",
+        "Rx",
+        "ReactiveX",
+        "Observable",
+        "Observer",
+        "Module",
+        "ES2015",
+        "ES2016",
+        "ES2017",
+        "ES6",
+        "ES7",
+        "ES8",
+        "Typescript"
+    ],
+    "contributors": [
+        {
+            "name": "Julien Fauville",
+            "url": "https://github.com/Juneil"
+        },
+        {
+            "name": "Antoine Gomez",
+            "url": "https://github.com/antoinegomez"
+        },
+        {
+            "name": "Sébastien Ritz",
+            "url": "https://github.com/reptilbud"
+        },
+        {
+            "name": "Nicolas Jessel",
+            "url": "https://github.com/njl07"
+        }
+    ],
+    "license": "SEE LICENSE IN https://github.com/hapinessjs/consul-module/blob/master/LICENSE.md",
+    "bugs": {
+        "url": "https://github.com/hapinessjs/consul-module/issues"
+    },
+    "homepage": "https://github.com/hapinessjs/consul-module#readme",
+    "dependencies": {
+        "@types/node": "^8.5.1",
+        "@types/consul": "^0.23.32",
+        "debug": "^3.1.0",
+        "consul": "^0.30.0"
+    },
+    "devDependencies": {
+        "@hapiness/core": "~1.5.1",
+        "@types/fs-extra": "^5.0.0",
+        "coveralls": "^3.0.0",
+        "fs-extra": "^5.0.0",
+        "istanbul": "^1.1.0-alpha.1",
+        "mocha": "^4.0.1",
+        "mocha-typescript": "^1.1.12",
+        "rimraf": "^2.6.2",
+        "rxjs": "^5.5.7",
+        "ts-node": "^3.3.0",
+        "tslint": "^5.8.0",
+        "typescript": "^2.6.2",
+        "unit.js": "^2.0.0"
+    },
+    "peerDependencies": {
+        "@hapiness/core": "^1.5.1",
+        "rxjs": "^5.5.7"
+    },
+    "engines": {
+        "node": ">=7.0.0"
+    }
+}

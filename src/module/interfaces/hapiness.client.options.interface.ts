@@ -2,8 +2,7 @@ export interface HapinessConsulClientOptions {
     scheme?: string;
     host?: string;
     port?: number;
-    username?: string;
-    password?: string;
+    token?: string;
     ca?: string;
     baseUrl?: string;
 }

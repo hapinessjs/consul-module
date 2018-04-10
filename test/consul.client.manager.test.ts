@@ -23,7 +23,7 @@ export class ConsulClientManagerTest {
             {
                 username: 'user1',
                 password: 'passwd',
-                baseUrl: 'http://user1:passwd@127.0.0.1:8500'
+                baseUrl: 'http://user1:passwd@127.0.0.1:8500/v1'
             }
         );
 
